@@ -1,16 +1,21 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "./app/Home";
-import MouseBalls from "./app/Components/Animations/MouseBalls";
 import Navbar from "./app/Components/Utils/Navbar";
-import Projects from "./app/projects/page";
-import Experience from "./app/experience/page";
-import About from "./app/about/page";
-import Contact from "./app/contact/page";
+import MouseBalls from "./app/Components/Animations/MouseBalls";
 import TransitionTemplate from "./TransitionTemplate";
-import Hackathons from "./app/achievements/page";
-import IndividualProject from "./app/individual-project/page";
 import ScrollWrapper from "./app/ScrollWrapper";
+import Loader from "./app/Loader";
+
+// Lazy load components
+import Home from "./app/Home";
+const Projects = React.lazy(() => import("./app/projects/page"));
+const Experience = React.lazy(() => import("./app/experience/page"));
+const About = React.lazy(() => import("./app/about/page"));
+const Contact = React.lazy(() => import("./app/contact/page"));
+const Hackathons = React.lazy(() => import("./app/achievements/page"));
+const IndividualProject = React.lazy(() =>
+  import("./app/individual-project/page")
+);
 
 const App = () => {
   return (
@@ -18,15 +23,17 @@ const App = () => {
       <Navbar />
       <MouseBalls />
       <ScrollWrapper>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/projects/:id" element={<IndividualProject />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/hackathons" element={<Hackathons />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+        <Suspense fallback={<Loader />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/projects/:id" element={<IndividualProject />} />
+            <Route path="/experience" element={<Experience />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/hackathons" element={<Hackathons />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </Suspense>
       </ScrollWrapper>
     </TransitionTemplate>
   );

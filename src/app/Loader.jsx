@@ -1,6 +1,5 @@
 import React, { useRef, useEffect, useState, useContext } from "react";
-import Image from "next/image";
-import Context from "./Context/Context";
+import Context from "../Context/Context";
 
 const Loader = () => {
   const { tl } = useContext(Context);
