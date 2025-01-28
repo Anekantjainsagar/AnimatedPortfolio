@@ -1,5 +1,23 @@
 const experience = [
   {
+    name: "Yash Technologies",
+    link: "https://www.yash.com/",
+    title: "Associate Trainee",
+    timeline: "Jan 2025 to Present",
+    about:
+      "I recently joined Yash Technologies, a leading MNC, where I aim to contribute to innovative projects. I’ll focus on Python development in the future, enhancing my skills and delivering impactful solutions in a collaborative, global environment.",
+    // url: "https://drive.google.com/file/d/1NJz3IIOqngdhfdQikCF3dVpNLQrHTurp/view",
+  },
+  {
+    name: "ProWiz Analytics",
+    link: "https://prowiz.io/",
+    title: "Frontend Developer Intern",
+    timeline: "June 2024 to Present",
+    about:
+      "I created modular, reusable code, boosting team efficiency by over 90%, and designed admin panels that improved operations by 30% across departments. These solutions streamlined workflows, enhanced collaboration, and ensured scalability for future organizational needs.",
+    // url: "https://drive.google.com/file/d/1NJz3IIOqngdhfdQikCF3dVpNLQrHTurp/view",
+  },
+  {
     name: "Consciousleap",
     link: "https://consciousleap.co/",
     title: "Software Development Engineer",
@@ -12,7 +30,7 @@ const experience = [
     name: "Trubuddies",
     link: "https://trubuddies.com/",
     title: "Full Stack Web Developer - Freelancer",
-    timeline: "Oct 2023 to Current",
+    timeline: "Oct 2023 to Dec 2024",
     about:
       "Trubuddies is a mental health website I built from scratch, featuring interactive tools, personalized recommendations, and a seamless user experience. I handled all aspects of development, ensuring a robust and scalable solution.",
   },
