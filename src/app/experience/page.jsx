@@ -58,7 +58,7 @@ const Experience = () => {
         height: "0px",
       },
       {
-        height: "1700px",
+        height: "1950px",
         zIndex: 0,
         duration: 3,
         ease: "none",
