@@ -1,33 +1,24 @@
 version: 0.2
+
 phases:
   install:
     runtime-versions:
       nodejs: 18
+   
     commands:
-      - echo "Installing Node.js dependencies"
-      - echo "Node version: $(node --version)"
-      - echo "NPM version: $(npm --version)"
-      - npm install
-  pre_build:
-    commands:
-      - echo "Pre-build phase started on $(date)"
-      - echo "Running tests (if any)"
-      # - npm test -- --coverage --watchAll=false
+        # install npm
+        - npm install
+       
   build:
     commands:
-      - echo "Build phase started on $(date)"
-      - echo "Building React app for production"
-      - npm run build
-      - echo "Build completed successfully"
-      - echo "Listing build output:"
-      - ls -la build/
-  post_build:
-    commands:
-      - echo "Post-build phase started on $(date)"
-      - echo "Build completed on $(date)"
-      - echo "React app ready for deployment"
+        # run build script
+        - npm run build
+     
 artifacts:
+  # include all files required to run the application
   files:
-    - '**/*'
-  name: ReactAppBuild
-  base-directory: build
+    - public/**/*
+    - src/**/*
+    - package.json
+    - appspec.yml
+    - scripts/**/*
