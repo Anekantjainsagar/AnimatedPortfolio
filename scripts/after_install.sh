@@ -6,16 +6,16 @@
 cd /src
 
 # Set proper ownership and permissions
-chown -R ec2-user:ec2-user /src
+chown -R ubuntu:ubuntu /src
 chmod -R 755 /src
 
 # Install dependencies
 echo "Installing npm dependencies..."
-sudo -u ec2-user npm install --production
+sudo -u ubuntu npm install --production
 
 # Build the React application
 echo "Building React application..."
-sudo -u ec2-user npm run build
+sudo -u ubuntu npm run build
 
 # Install serve globally to serve the built React app
 npm install -g serve
@@ -40,6 +40,6 @@ module.exports = {
 EOF
 
 # Set ownership for the ecosystem file
-chown ec2-user:ec2-user /src/ecosystem.config.js
+chown ubuntu:ubuntu /src/ecosystem.config.js
 
 echo "After install completed successfully"

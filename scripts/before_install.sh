@@ -3,11 +3,11 @@
 # before_install.sh - Prepare the environment before installing the application
 
 # Update system packages
-yum update -y
+apt update -y
 
 # Install Node.js 18.x if not already installed
-curl -fsSL https://rpm.nodesource.com/setup_18.x | bash -
-yum install -y nodejs
+curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+apt install -y nodejs
 
 # Verify Node.js and npm installation
 echo "Node.js version: $(node --version)"

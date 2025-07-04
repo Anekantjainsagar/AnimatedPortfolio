@@ -7,19 +7,19 @@ cd /src
 
 # Start the application using PM2
 echo "Starting React application with PM2..."
-sudo -u ec2-user pm2 start ecosystem.config.js
+sudo -u ubuntu pm2 start ecosystem.config.js
 
 # Save PM2 process list and set up auto-restart on boot
-sudo -u ec2-user pm2 save
-sudo -u ec2-user pm2 startup
+sudo -u ubuntu pm2 save
+sudo -u ubuntu pm2 startup
 
 # Check if the application is running
 sleep 5
 
 # Verify the application is running
-if sudo -u ec2-user pm2 list | grep -q "react-app"; then
+if sudo -u ubuntu pm2 list | grep -q "react-app"; then
     echo "React application started successfully"
-    sudo -u ec2-user pm2 status
+    sudo -u ubuntu pm2 status
 else
     echo "Failed to start React application"
     exit 1
